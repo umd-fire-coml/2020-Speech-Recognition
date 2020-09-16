@@ -13,6 +13,10 @@ This paper surveys various DNNs for Speech and Vision applications. Alam et al. 
 [Original Link Here](https://arxiv.org/abs/1506.05869)
 This paper proposed a novel conversational model that was based on the Seq2Seq model. The researchers used the seq2seq framework to predict the next sentence given the previous sentence or sentences in a conversation. They showed that their model was able to hold simple conversation with detailed responses when given a dataset of an IT Helpdesk, and less detailed but mostly logically correct responses when shown a more open-domain dataset of movie transcripts.
 
+### [Neural Approaches to Conversational AI](Neural_Approaches_to_Conversational_AI.pdf)
+
+[Original Link here](https://arxiv.org/abs/1809.08267)
+This paper is a very extensive study and summary of using Neural Networks for Coversational AI. It is 95 pages long and has not been read extensively, but it may prove to be useful in the future if we choose to go along this path.
 
 ## Datasets
 
