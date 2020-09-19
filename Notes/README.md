@@ -33,6 +33,16 @@ This paper proposed an approach of using a CNN model to extract emotion from raw
 [Original Link Here](https://www.sciencedirect.com/science/article/abs/pii/S089360801730059X)
 This paper evaluated various techniques for Speech Emotion Recognition using deep learning techniques. They used various RNN/LSTM and CNN models and compared their performance on the IEMOCAP dataset. They also employed different models for turn-based processing and frame-based processing. Turn-based processing attatched a label to each utterance whereas frame-based processing attatched a label to each frame. Their results showed the superiority of frame-based CNN models, but even this paper's accuracy was the state-of-the-art at the time of only 60-65% on their test datasets.
 
+### [Hate me, hate me not: Hate speech detection on Facebook](Hate_me_hate_me_not_Hate_speech_detection_on_Facebook.pdf)
+
+[Original Link Here](https://www.semanticscholar.org/paper/Hate-Me%2C-Hate-Me-Not%3A-Hate-Speech-Detection-on-Vigna-Cimino/2d21ebb96a5cd93bdfda391c70a3f77717b09833)
+This paper used two techniques for Hate Speech detection using machine learning. The authors used LSTMs and SVMs to classify content on facebook as hate speech. They collected their own dataset on a subset of the data available on Facebook to target only Italian posts that consisted of 17567 comments and 99 posts. They also preprocessed their data with sentiment polarity and word embedding lexicons to improve the accuracy of their model. Overall, the LSTM outperformed the SVM with an accuracy of approximately 75% as compared to an accuracy of 73%. In comparision to the results of emotion detection from other papers, this approach of hate speech detection did seem to have more promising results. 
+
+### [Using Convolutional Neural Networks to Classify Hate-Speech](Using_Convolutional_Neural_Networks_to_Classify_Hate-Speech.pdf)
+
+[Original Link Here](https://www.researchgate.net/publication/318741626_Using_Convolutional_Neural_Networks_to_Classify_Hate-Speech)
+This paper used CNNs for Hate Speech Discrimination. They divided their labels into 4 classes: sexism, racism, both, and non-hate speech. Notably despite their imbalanced dataset, their approach was able to obtain a precision of 86.61% on a dataset of a dataset of tweets. This paper also discussed the continious-bag-of-words and skip-gram models which may prove useful if we need to embed words for our own project. This result is definetly even more promising than the hate speech detection model discussed in the previous paper, but these models were trained on different datasets so it would be interesting to first check their performance by validating these models on each other's dataset and then comparing the results. 
+
 ## Datasets
 
 * IT Helpdesk Dataset
@@ -40,4 +50,4 @@ This paper evaluated various techniques for Speech Emotion Recognition using dee
 * [TIMIT](https://deepai.org/dataset/timit) Acoustic-Phonetic Continuous Speech Corpus
 * [IEMOCAP](https://sail.usc.edu/iemocap/) Interactive Emotional Dyadic Motion Capture
 * Twitter
-
+* Facebook
