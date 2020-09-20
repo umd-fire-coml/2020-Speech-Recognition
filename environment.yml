@@ -1,0 +1,12 @@
+name: speech-rec-env
+
+dependencies:
+        - tensorflow=2.0
+        - pandas
+        - requests
+        - opencv
+        - dlib
+        - matplotlib
+        - jupyterlab
+        - scikit-image
+        - tqdm
