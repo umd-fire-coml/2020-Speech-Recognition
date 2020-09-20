@@ -24,5 +24,10 @@ This paper explores the realm of voice commands to control unmanned vehicles, na
 [Original Link here](https://asmp-eurasipjournals.springeropen.com/articles/10.1155/2010/546047)
 This paper looks at a system targeted towards recognizing phonemes and words from singing input. The network created by Mesaros and Virtanen also utilizes a Hidden Markov Model as a phonetic recognizer, wher the probability density function of each of the HMM states is modeled by a Gaussian mixture model. One benefit of this approach is that the acoustic system can be trained to interpret linguistic information to create more complex multilingual models. This information could prove useful in application to our project as it demonstrates the breakdown of language into its three classes of sounds- vowels, consonants, and nonspeech- and further elaborates on how each subpart should be approached. 
 
+### [Automatic Lyrics Transcription using Dilated CNNs](Automatic_Lyrics_Transcription.pdf)
+
+[Original Link here](https://arxiv.org/pdf/2007.06486.pdf)
+In this paper, Demirel et al. propose a model for lyric transcription that utilizes convolutional time-delay networks. Tested exclusively on English lyrics in the DAMP-Sing! dataset, the network is trained on monophonic Karaoke recordings of pop songs over 150 hours of trainable data. Available at https://github.com/emirdemirel/ALTA, this dataset could prove useful to our research by providing a base pipeline from which we can build our network.
+
 ##Datasets
 
