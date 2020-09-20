@@ -7,7 +7,7 @@ args = parser.parse_args()
 
 folder = args.folder
 
-if (os.path.exists(args.folder)):
+if (os.path.exists(folder) and os.listdir(folder)):
     print("Data exists on the current path.")
 else:
     print("Data does not exist on the current path.")
