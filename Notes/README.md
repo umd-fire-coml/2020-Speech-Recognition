@@ -31,3 +31,9 @@ In this paper, Demirel et al. propose a model for lyric transcription that utili
 
 ##Datasets
 
+DAMP - Sing!
+musiXmatch
+GTZan Genre Collection
+Million Songs
+Google Speech Commands Dataset
+
