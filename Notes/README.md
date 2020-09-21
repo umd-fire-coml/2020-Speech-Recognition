@@ -99,13 +99,14 @@ Other steps may include language conversion using Neural Machine Translation[NMT
 * Movie Transcripts
 * [TIMIT](https://deepai.org/dataset/timit) Acoustic-Phonetic Continuous Speech Corpus
 * [IEMOCAP](https://sail.usc.edu/iemocap/) Interactive Emotional Dyadic Motion Capture
-* Twitter
-* Facebook
+* IEMOCAP
+* Common Voice
 * DAMP - Sing!
 * musiXmatch
 * GTZan Genre Collection
 * Million Songs
 * Google Speech Commands Dataset
+* LibriSpeech
 
 ## References:
 https://aws.amazon.com/blogs/machine-learning/create-video-subtitles-with-translation-using-machine-learning/
