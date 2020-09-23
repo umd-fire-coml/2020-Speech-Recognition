@@ -1,6 +1,7 @@
 # Research
 
-This folder contains research papers we have read and notes
+This folder contains research papers we have read, notes, and datasets to explore
+
 ## Papers
 
 ### [Survey on Deep Neural Networks in Speech and Vision Systems](Survey_on_Deep_Neural_Networks_in_Speech_and_Vision_Systems.pdf)
@@ -43,17 +44,6 @@ This paper used two techniques for Hate Speech detection using machine learning.
 [Original Link Here](https://www.researchgate.net/publication/318741626_Using_Convolutional_Neural_Networks_to_Classify_Hate-Speech)
 This paper used CNNs for Hate Speech Discrimination. They divided their labels into 4 classes: sexism, racism, both, and non-hate speech. Notably despite their imbalanced dataset, their approach was able to obtain a precision of 86.61% on a dataset of a dataset of tweets. This paper also discussed the continious-bag-of-words and skip-gram models which may prove useful if we need to embed words for our own project. This result is definetly even more promising than the hate speech detection model discussed in the previous paper, but these models were trained on different datasets so it would be interesting to first check their performance by validating these models on each other's dataset and then comparing the results. 
 
-## Datasets
-
-* IT Helpdesk Dataset
-* Movie Transcripts
-* [TIMIT](https://deepai.org/dataset/timit) Acoustic-Phonetic Continuous Speech Corpus
-* [IEMOCAP](https://sail.usc.edu/iemocap/) Interactive Emotional Dyadic Motion Capture
-* Twitter
-* Facebook
-
-## Papers
-
 ### [Noise Estimation and Noise Removal Techniques](Noise_Estimation_And_Noise_Removal_Techniques.pdf)
 
 [Original Link Here](https://link.springer.com/chapter/10.1007/978-3-642-16327-2_40)
@@ -79,11 +69,46 @@ This paper looks at a system targeted towards recognizing phonemes and words fro
 [Original Link here](https://arxiv.org/pdf/2007.06486.pdf)
 In this paper, Demirel et al. propose a model for lyric transcription that utilizes convolutional time-delay networks. Tested exclusively on English lyrics in the DAMP-Sing! dataset, the network is trained on monophonic Karaoke recordings of pop songs over 150 hours of trainable data. Available at https://github.com/emirdemirel/ALTA, this dataset could prove useful to our research by providing a base pipeline from which we can build our network.
 
-##Datasets
+### [Gender Recognition](GenderRecognitionStudy.pdf)
 
-DAMP - Sing!
-musiXmatch
-GTZan Genre Collection
-Million Songs
-Google Speech Commands Dataset
+[Original Link here](http://athena.csus.edu/~makwanap/FinalReport.pdf)
+Dataset: https://www.kaggle.com/primaryobjects/voicegender
+CSV file with frequency attributes from converting sound waves for both genders
+Uses: Identifying human sounds (e.g. “This is a male laughing”), categorizing audios/videos according to preferences, greetings, can help personal assistants like Siri, Google Assistant to answer the question with female generic or male generic results.
+Difficult to define and also controversial!
+
+### [Language Detection](Multi_Language_Speech_to_text.pdf)
+
+[Original Link here](https://www.kaggle.com/toponowicz/spoken-language-identification)
+Only English, German, Spanish, French data available here: https://github.com/tomasz-oponowicz/spoken_language_identification
+Big variance forces the model to concentrate more on language properties as opposed to a specific voice. Each sample is an FLAC audio file with: sample rate of 22050, bit depth of 16, 1 channel, and duration of 10 seconds (sharp). The original recordings are MP3 files but they are converted into FLAC files quickly
+
+## Information and method:
+
+The process for transcription is time consuming and requires a lot of educated people with language profciency. This effort is compounded when a multi-language transcript is required. Natural language processing (NLP) and translation are some of the hardest problems for computers to solve because of the many idiomatic elements of speech. This requires a native speaker of both the source and target language to perform a translation. The recently introduced neural-network based approach to machine translation has brought on unprecedented translation accuracy and fluency. While it is not perfect yet, it is now a viable solution for many more use cases than ever before.
+
+* Step 1: Recognise Speech in audio or video files.
+* Step 2: Storing the output in JSON file that includes word-level time stamping, punctiation and confidence levels.
+* Step 3: Converting to relevant sub title file format. For example .SRT file.
+* Step 4: Overlaying it on video or audio files with media player or online tools.
+
+Other steps may include language conversion using Neural Machine Translation[NMT].
+
+## Datasets
+* IT Helpdesk Dataset
+* Movie Transcripts
+* [TIMIT](https://deepai.org/dataset/timit) Acoustic-Phonetic Continuous Speech Corpus
+* [IEMOCAP](https://sail.usc.edu/iemocap/) Interactive Emotional Dyadic Motion Capture
+* IEMOCAP
+* Common Voice
+* DAMP - Sing!
+* musiXmatch
+* GTZan Genre Collection
+* Million Songs
+* Google Speech Commands Dataset
+* LibriSpeech
+
+## References:
+https://aws.amazon.com/blogs/machine-learning/create-video-subtitles-with-translation-using-machine-learning/
+README.md [dos] (16:42 21/09/2020)                                                                                              
 
