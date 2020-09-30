@@ -1,4 +1,7 @@
-import matplotlib,tqdm, tensorflow, pandas, opencv, skimage, sys
+try: 
+    import matplotlib,tqdm, tensorflow, pandas, opencv, skimage, sys
+except:
+    print("One of the following packages is not installed: " , "matplotlib,tqdm, tensorflow, pandas, opencv, skimage, sys")
 
 
 if tensorflow.__version__ != "2.0":
