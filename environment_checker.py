@@ -14,7 +14,7 @@ elif opencv.__version__ == "0":
     print("Check opencv version")
 elif skimage.__version__ == "0":
     print("Check scikit-image version")
-elif sys.version.split(" ")[0] != '3.7':
+elif sys.version.split(" ")[0] != '3.8':
     print("Check pandas version")
 elif tqdm.__version__ == "0":
     print("Check pandas version")
