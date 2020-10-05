@@ -1,11 +1,10 @@
 import argparse, os
 from argparse import ArgumentParser
 import pandas as pd
-import pickle
 import sys
 
 parser = argparse.ArgumentParser(description = 'Dataset Checker')
-parser.add_argument('-d', '--dataframe', type = str, help = "Location of CSV Dataframe", default='.data-store.pkl')
+parser.add_argument('-d', '--dataframe', type = str, help = "Location of CSV Dataframe", default='.data-store.csv')
 parser.add_argument('-n', '--name', type = str, help='dataset to check for', default='smule')
 parser.add_argument('-u', '--url', type = str, help='dataset download link')
 parser.add_argument('-f', '--folder', type = str, help = 'Folder to Check for')
@@ -14,7 +13,8 @@ parser.add_argument('-t', '--type', type=str, help='Type of downloaded file', de
 args = parser.parse_args()
 
 if os.path.exists(args.dataframe):
-	df = pd.read_pickle(args.dataframe)
+	df = pd.read_csv(args.dataframe)
+	df = df.set_index("Name")
 else:
 	df = pd.DataFrame({"Name": [], "Folder": [], "URL": [], "Type":[]})
 	df = df.set_index("Name") 
@@ -24,11 +24,11 @@ if args.name not in df.index or args.action == "update":
 		print("Dataest not in data store. Please specify a folder location and a url for this dataset")
 		sys.exit(0)
 	df.loc[args.name] = [args.folder, args.url, args.type]
-	df.to_pickle(args.dataframe) 
+	df.to_csv(args.dataframe) 
 
 if args.name in df.index and args.action == "delete":
 	df = df.drop(args.name)
-	df.to_pickle(args.dataframe)
+	df.to_csv(args.dataframe)
 	print("Deleted %s dataset" % (args.name,))
 	sys.exit(0)
 
