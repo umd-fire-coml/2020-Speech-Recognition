@@ -1,22 +1,62 @@
 try: 
-    import matplotlib,tqdm, tensorflow, pandas, opencv, skimage, sys
+    import matplotlib
 except:
-    print("One of the following packages is not installed: " , "matplotlib,tqdm, tensorflow, pandas, opencv, skimage, sys")
+    print("The following package is not installed: " , "matplotlib = 2.0.2")
 
+try: 
+    import tqdm
+except:
+    print("The following package is not installed: " , "tqdm")
+    
+try: 
+    import tensorflow
+except:
+    print("The following package is not installed: " , "tensorflow = 2.0")
+ 
+try: 
+    import pandas
+except:
+    print("The following package is not installed: " , "pandas")
+ 
+try: 
+    import opencv
+except:
+    print("The following package is not installed: " , "opencv")
+    
+try: 
+    import skimage
+except:
+    print("The following package is not installed: " , "skimage")
+
+try: 
+    import sys
+except:
+    print("The following package is not installed: " , "sys = 3.8")
+
+try:
+    import numpy
+ except: 
+    print("The following package is not installed: " , "numpy")
+ 
+try:
+    import librosa
+except:
+    print("The following package is not installed: " , "librosa")
+    
 
 if tensorflow.__version__ != "2.0":
     print("check tensorflow version")
-elif matplotlib.__version__ != "2.0.2":
+if matplotlib.__version__ != "2.0.2":
     print("Check matplotlib version")
-elif pandas.__version__ == "0":
+if pandas.__version__ == "0":
     print("Check pandas version")
-elif opencv.__version__ == "0":
+if opencv.__version__ == "0":
     print("Check opencv version")
-elif skimage.__version__ == "0":
+if skimage.__version__ == "0":
     print("Check scikit-image version")
-elif sys.version.split(" ")[0] != '3.8':
+if sys.version.split(" ")[0] != '3.8':
     print("Check pandas version")
-elif tqdm.__version__ == "0":
+if tqdm.__version__ == "0":
     print("Check pandas version")
 else:
     print("Environment is Setup Correctly")
