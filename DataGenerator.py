@@ -59,7 +59,7 @@ class DataGenerator(keras.utils.Sequence):
         for i, ID in enumerate(list_IDs_temp):
             # Store sample
             #self.load_audio('grace_data/amazing_grace/312087870_108215812.m4a')
-            X[i,] = self.load_audio(prefix + ID)
+            X[i,] = self.load_audio(prefix + "/" + ID)
 
             # Store class
             #y[i] = self.labels[ID]
