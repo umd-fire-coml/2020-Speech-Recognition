@@ -94,4 +94,4 @@ class DataAugmentation:
         """
         data = librosa.load(self.file_path, sr=None)
 
-        return data
+        return data[0]
