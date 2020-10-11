@@ -8,7 +8,7 @@ from os.path import isfile, join
 
 class DataGenerator(keras.utils.Sequence):
     'Generates data for Keras'
-    def __init__(self, list_IDs, labels, batch_size, dim, n_channels,
+    def __init__(self, path_prefix, list_IDs, labels, batch_size, dim, n_channels,
                  n_classes, shuffle):
         'Initialization'
         self.dim = dim
@@ -59,7 +59,7 @@ class DataGenerator(keras.utils.Sequence):
         for i, ID in enumerate(list_IDs_temp):
             # Store sample
             #self.load_audio('grace_data/amazing_grace/312087870_108215812.m4a')
-            X[i,] = self.load_audio('grace_data/amazing_grace/'+ID)
+            X[i,] = self.load_audio(prefix + ID)
 
             # Store class
             #y[i] = self.labels[ID]
