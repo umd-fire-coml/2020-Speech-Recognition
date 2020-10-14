@@ -1,22 +1,23 @@
-import numpy as np
 import librosa
+import numpy as np
+import librosa.display
+import matplotlib.pyplot as plt
 
 
 class DataAugmentation:
 
-    def __init__(self, noise_factor=2, sampling_rate=8000,
+    def __init__(self, noise_factor=0.02, sampling_rate=8000,
                  shift_max=1, shift_direction='both',
-                 pitch_factor=2, speed_factor=1.5, file_path="", data=0):
+                 pitch_factor=2, speed_factor=1.5, visualization=False):
         """ Initialization
 
-        :param noise_factor: amount of noise to be injected (0-5).
+        :param noise_factor: amount of noise to be injected (0.00 - 0.10).
         :param sampling_rate: frequency of the sample in Hz (Generally 8000Hz).
         :param shift_max: how much to shift the audio sample by (number of seconds).
         :param shift_direction: In which direction to shift audio (left, right, both).
         :param pitch_factor: How much to change the pitch of audio (-8 to 8).
         :param speed_factor: Changes speed of the audio (0 to 2)
-        :param file_path: path of audio_file
-        :param data: Audio file as Numpy array
+        :param visualization: display original and augmented data, by default False.
         """
 
         self.noise_factor = noise_factor
@@ -25,8 +26,9 @@ class DataAugmentation:
         self.shift_direction = shift_direction
         self.pitch_factor = pitch_factor
         self.speed_factor = speed_factor
-        self.file_path = file_path
-        self.data = load_data()
+        self.visualization = visualization
+        self.data = 0
+        self.sr = 0
 
     def noise_injection(self):
         """
@@ -35,11 +37,14 @@ class DataAugmentation:
         """
 
         noise = np.random.randn(len(self.data))
-        augmented_data = data + self.noise_factor * noise
+        augmented_data = self.data + self.noise_factor * noise
 
         # Cast back to same data type
+        augmented_data = augmented_data.astype(type(self.data[0]))
 
-        augmented_data = augmented_data.astype(type(data[0]))
+        if self.visualization:
+            self.visualize(augmented_data)
+
         return augmented_data
 
     def shifting_time(self):
@@ -69,6 +74,9 @@ class DataAugmentation:
         else:
             augmented_data[shift:] = 0
 
+        if self.visualization:
+            self.visualize(augmented_data)
+
         return augmented_data
 
     def change_pitch(self):
@@ -77,7 +85,11 @@ class DataAugmentation:
         pitch_factor will change the pitch up if positive and down if negative.
         :return augmented_data: returns an ndArray.
         """
-        augmented_data = librosa.effects.pitch_shift(data, self.sampling_rate, self.pitch_factor)
+        augmented_data = librosa.effects.pitch_shift(self.data, self.sampling_rate, self.pitch_factor)
+
+        if self.visualization:
+            self.visualize(augmented_data)
+
         return augmented_data
 
     def change_speed(self):
@@ -85,13 +97,30 @@ class DataAugmentation:
         Speed_factor should be a float from 0 to 2
         :return: Augmented data
         """
-        return librosa.effects.time_stretch(self.data, self.speed_factor)
+        augmented_data = librosa.effects.time_stretch(self.data, self.speed_factor)
 
-    def load_data(self):
+        if self.visualization:
+            self.visualize(augmented_data)
+
+        return augmented_data
+
+    def load_data(self, file_path):
         """
         Loads the data into file
         :return: Augmented data
         """
-        data = librosa.load(self.file_path, sr=None)
+        self.data, self.sr = librosa.load(file_path, sr=None)
 
-        return data[0]
+    def visualize(self, augmented_data):
+        """
+        For displaying augmentation. 1st Plot raw data, 2nd Plot augmented data.
+        :param augmented_data:
+        :return: Displays Plots if visualize is True
+        """
+        plt.figure(figsize=(14, 5))
+        librosa.display.waveplot(self.data, sr=self.sr)
+        plt.show()
+
+        plt.figure(figsize=(14, 5))
+        librosa.display.waveplot(augmented_data, sr=self.sr)
+        plt.show()
