@@ -1,7 +1,7 @@
 try: 
     import matplotlib
     if matplotlib.__version__ != "2.0.2":
-        print("Check matplotlib version")
+        print("Ensure matplotlib version is 2.0.2")
 except:
     print("The following package is not installed: " , "matplotlib = 2.0.2")
     
@@ -17,7 +17,7 @@ except:
 try: 
     import tensorflow
     if tensorflow.__version__ != "2.0":
-        print("check tensorflow version")
+        print("Ensure tensorflow version is 2.0")
 except:
     print("The following package is not installed: " , "tensorflow = 2.0")
    
