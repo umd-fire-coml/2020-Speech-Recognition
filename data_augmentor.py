@@ -124,3 +124,5 @@ class DataAugmentation:
         plt.figure(figsize=(14, 5))
         librosa.display.waveplot(augmented_data, sr=self.sr)
         plt.show()
+        
+        
