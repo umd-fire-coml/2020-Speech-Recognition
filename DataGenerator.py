@@ -70,5 +70,5 @@ class DataGenerator(keras.utils.Sequence):
     def load_audio(self,audio_file_path):
         """Load audio to numpy array and return it
         """
-        x,sr = librosa.load(audio_file_path, sr = None)
+        x,sr = librosa.load(audio_file_path, sr = 16000)
         return x
