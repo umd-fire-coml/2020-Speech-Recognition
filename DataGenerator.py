@@ -11,6 +11,7 @@ class DataGenerator(keras.utils.Sequence):
     def __init__(self, path_prefix, list_IDs, labels, batch_size, dim, n_channels,
                  n_classes, shuffle):
         'Initialization'
+        self.path_prefix = path_prefix
         self.dim = dim
         self.batch_size = batch_size
         self.labels = labels
@@ -50,7 +51,7 @@ class DataGenerator(keras.utils.Sequence):
         curr_len = 0
         for i,ID in enumerate(list_IDs_temp):
           print(ID)
-          curr_len = len(self.load_audio('grace_data/amazing_grace/'+ID))
+          curr_len = len(self.load_audio(join(self.path_prefix,ID)))
         print(curr_len)
         X = np.empty((self.batch_size, curr_len))
         #y = np.empty((self.batch_size), dtype=int)
@@ -59,7 +60,7 @@ class DataGenerator(keras.utils.Sequence):
         for i, ID in enumerate(list_IDs_temp):
             # Store sample
             #self.load_audio('grace_data/amazing_grace/312087870_108215812.m4a')
-            X[i,] = self.load_audio(prefix + "/" + ID)
+            X[i,] = self.load_audio(join(self.path_prefix,ID))
 
             # Store class
             #y[i] = self.labels[ID]
