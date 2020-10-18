@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 class DataAugmentation:
 
-    def __init__(self, data, noise_factor=0.02, sampling_rate=8000,
+    def __init__(self, noise_factor=0.02, sampling_rate=8000,
                  shift_max=1, shift_direction='both',
                  pitch_factor=2, speed_factor=1.5, visualization=False):
         """ Initialization
@@ -27,7 +27,7 @@ class DataAugmentation:
         self.pitch_factor = pitch_factor
         self.speed_factor = speed_factor
         self.visualization = visualization
-        self.data = data
+        self.data = 0
         self.sr = 0
 
     def noise_injection(self):
@@ -110,6 +110,13 @@ class DataAugmentation:
         :return: Augmented data
         """
         self.data, self.sr = librosa.load(file_path, sr=None)
+    
+    def load_numpy(self, data, sr):
+        """
+        Loads the data into file
+        :return: Augmented data
+        """
+        self.data, self.sr = data, sr
 
     def visualize(self, augmented_data):
         """
