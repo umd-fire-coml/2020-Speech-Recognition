@@ -47,25 +47,20 @@ class DataGenerator(keras.utils.Sequence):
     def __data_generation(self, list_IDs_temp):
         'Generates data containing batch_size samples' # X : (n_samples, *dim, n_channels)
         # Initialization
-        
-        curr_len = 0
-        for i,ID in enumerate(list_IDs_temp):
-          print(ID)
-          curr_len = len(self.load_audio(join(self.path_prefix,ID)))
-        print(curr_len)
-        X = np.empty((self.batch_size, curr_len))
+
+        X = []#np.empty((self.batch_size, curr_len))
         #y = np.empty((self.batch_size), dtype=int)
 
         # Generate data
         for i, ID in enumerate(list_IDs_temp):
             # Store sample
             #self.load_audio('grace_data/amazing_grace/312087870_108215812.m4a')
-            X[i,] = self.load_audio(join(self.path_prefix,ID))
+            X.append(self.load_audio(join(self.path_prefix,ID)))
 
             # Store class
             #y[i] = self.labels[ID]
 
-        return X#, keras.utils.to_categorical(y, num_classes=self.n_classes)
+        return np.array(X)#, keras.utils.to_categorical(y, num_classes=self.n_classes)
 
     def load_audio(self,audio_file_path):
         """Load audio to numpy array and return it
