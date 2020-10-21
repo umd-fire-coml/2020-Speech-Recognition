@@ -1,9 +1,9 @@
 try: 
     import matplotlib
-    if matplotlib.__version__ != "2.0.2":
-        print("Check matplotlib version")
+    if matplotlib.__version__ != "2.1.0":
+        print("Ensure matplotlib version is 2.1.0")
 except:
-    print("The following package is not installed: " , "matplotlib = 2.0.2")
+    print("The following package is not installed: " , "matplotlib = 2.1.0")
     
         
 try: 
@@ -17,7 +17,13 @@ except:
 try: 
     import tensorflow
     if tensorflow.__version__ != "2.0":
-        print("check tensorflow version")
+        print("Ensure tensorflow version is 2.0.*")
+    try:
+        from tensorflow import keras
+        if keras.__version__ != "2.0":
+            print("Ensure keras version is 2.0.*")
+    except:
+        print("Error importing keras modules")
 except:
     print("The following package is not installed: " , "tensorflow = 2.0")
    
@@ -43,8 +49,16 @@ try:
     if skimage.__version__ == "0":
         print("Check scikit-image version")
 except:
-    print("The following package is not installed: " , "skimage")
+    print("The following package is not installed: " , "scikit-image")
     
+
+try:
+    import sklearn
+    if sklearn.__version__ == "0":
+        print("Check scikit-learn version")
+except:
+    print("The following package is not installed: " , "scikit-learn")
+
 
 try: 
     import sys
@@ -58,9 +72,15 @@ try:
     import numpy
  except: 
     print("The following package is not installed: " , "numpy")
- 
+
+
 try:
     import librosa
 except:
     print("The following package is not installed: " , "librosa")
-  
+
+
+try:
+    import ffmpeg
+except:
+    print("The following package is not installed: " , "ffmpeg")
