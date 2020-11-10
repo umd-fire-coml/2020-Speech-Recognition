@@ -2,7 +2,7 @@ import os
 import numpy as np
 import tensorflow as tf
 import logging
-from keras.callbacks import Callback, TensorBoard, EarlyStopping
+from tensorflow.keras.callbacks import Callback, TensorBoard, EarlyStopping
 import dill
 
 def save(data, file_name):
@@ -69,7 +69,7 @@ class CustomModelCheckpoint(Callback):
         val_loss = logs.get('val_loss')
         name = f'weights.{epoch + 1:02d}-{val_loss:.2f}.hdf5'
         file_path = os.path.join(self.log_dir, name)
-        self.model.template_model.save(file_path, overwrite=True)
+        self.model.save(file_path, overwrite=True)
         if val_loss < self.best_result:
             self.best_result = val_loss
             self.best_weights_path = file_path
@@ -79,7 +79,7 @@ class CustomModelCheckpoint(Callback):
     def _set_best_weights_to_model(self, history):
         """ Set best weights to the model. Checkpoint callback save the best
         weights path. """
-        self.model.template_model.load_weights(self.best_weights_path)
+        self.model.load_weights(self.best_weights_path)
 
     on_train_end = _set_best_weights_to_model
 
