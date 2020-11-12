@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-import keras
+from tensorflow import keras
 
 import re
 import string
@@ -21,7 +21,7 @@ class DataGenerator(keras.utils.Sequence):
         self.path_prefix = path_prefix
         self.dim = dim
         self.batch_size = batch_size
-        self.labels = labels
+        self.labels = np.array(labels)
         self.list_IDs = list_IDs
         self.n_channels = n_channels
         self.n_classes = n_classes
@@ -41,8 +41,8 @@ class DataGenerator(keras.utils.Sequence):
         list_IDs_temp = [self.list_IDs[k] for k in indexes]
 
         # Generate data
-        X = self.__data_generation(list_IDs_temp) #,y when other stuff is uncommented
-
+        X = self.__data_generation(list_IDs_temp, indexes) #,y when other stuff is uncommented
+        
         return X
 
     def on_epoch_end(self):
@@ -51,7 +51,7 @@ class DataGenerator(keras.utils.Sequence):
         if self.shuffle == True:
             np.random.shuffle(self.indexes)
 
-    def __data_generation(self, list_IDs_temp):
+    def __data_generation(self, list_IDs_temp, indexes):
         'Generates data containing batch_size samples' 
         # X : (n_samples, *dim, n_channels)
         # Initialization
@@ -65,8 +65,9 @@ class DataGenerator(keras.utils.Sequence):
         X = self.align(X)
 
         alphabet = Alphabet("alphabet.txt")
-        lyrics = alphabet.get_batch_labels(self.fetch_lyrics(self.labels))
-        lyrics = self.align(lyrics)
+        #lyrics = alphabet.get_batch_labels(self.fetch_lyrics(self.labels))
+        lyrics = alphabet.get_batch_labels(self.labels[indexes])
+        #lyrics = self.align(lyrics)
 
         return (X, lyrics)
 
