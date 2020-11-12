@@ -1,11 +1,16 @@
 import numpy as np
+import tensorflow as tf
 import keras
 
+import re
+import string
 import random
 import librosa
 import python_speech_features
 from os import listdir
+from alphabet import Alphabet
 from os.path import isfile, join
+from lyrics_extractor import SongLyrics
 
 class DataGenerator(keras.utils.Sequence):
     'Generates data for Keras'
@@ -58,7 +63,12 @@ class DataGenerator(keras.utils.Sequence):
 
         X = self.pad_and_transpose(X)
         X = self.align(X)
-        return X
+
+        alphabet = Alphabet("alphabet.txt")
+        lyrics = alphabet.get_batch_labels(self.fetch_lyrics(self.labels))
+        lyrics = self.align(lyrics)
+
+        return (X, lyrics)
 
     def load_audio(self, audio_file_path):
         """Load audio to numpy array and return it"""
@@ -84,8 +94,29 @@ class DataGenerator(keras.utils.Sequence):
         aug_list = []
         conf = {"winfunc": np.hamming, "winlen": 0.025, "winstep": .01, "nfilt": 80}
         for audio in audio_list:
-          audio = np.concatenate((audio, np.zeros((max_len - len(audio),), dtype=int)))
-          feat, energy = python_speech_features.fbank(audio, samplerate=16000, **conf)
-          features = np.log(feat)
-          aug_list.append(features)
+            audio = np.concatenate((audio, np.zeros((max_len - len(audio),), dtype=int)))
+            feat, energy = python_speech_features.fbank(audio, samplerate=16000, **conf)
+            features = np.log(feat)
+            aug_list.append(features)
         return aug_list
+
+    def fetch_lyrics(self, labels):
+        keys = open("keys.txt").readlines()
+        api_key = keys[0]
+        engine_id = keys[1]
+        extract_lyrics = SongLyrics(api_key, engine_id)
+        lyrics = []
+        for song in labels:
+            lyric = extract_lyrics.get_lyrics(song)['lyrics']
+            lyric = re.sub("[\(\[].*?[\)\]]", "", lyrics)
+            lyric = lyric.replace('\n', ' ').lower()
+            lyric = lyric.translate(str.maketrans('', '', string.punctuation))
+            lyrics.append(lyric)
+        lyrics.append(lyric)
+        return lyrics
+
+
+
+
+
+
