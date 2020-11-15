@@ -133,3 +133,5 @@ Model/tensorboard
 *.m4a
 amazing_grace
 Github.ipynb
+Model/data/
+Model/data/
