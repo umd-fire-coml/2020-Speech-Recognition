@@ -1,0 +1,26 @@
+name: speech-rec-env
+
+channels:
+        - defaults
+        - conda-forge
+
+dependencies:
+        - python=3.8
+        - pandas
+        - numpy
+        - opencv
+        - dlib
+        - tqdm
+        - argparse
+        - pickle
+        - pip
+        - pip:
+                - ffmpeg
+                - jupyterlab
+                - keras==2.0.*
+                - librosa
+                - matplotlib==2.1.0
+                - os
+                - scikit-image
+                - scikit-learn
+                - tensorflow==2.0.*
