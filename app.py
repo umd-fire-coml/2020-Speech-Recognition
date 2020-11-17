@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from io import BufferedReader
-import baseline_model, model2
+import model2
 
 app = Flask(__name__)
 
