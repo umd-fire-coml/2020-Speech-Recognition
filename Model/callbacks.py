@@ -67,9 +67,10 @@ class CustomModelCheckpoint(Callback):
     def _save_model_weights(self, epoch, logs={}):
         """ Save model with weights of the single-gpu template model. """
         val_loss = logs.get('val_loss')
+        if val_loss == None: val_loss = -1.00
         name = f'weights.{epoch + 1:02d}-{val_loss:.2f}.hdf5'
         file_path = os.path.join(self.log_dir, name)
-        self.model.save(file_path, overwrite=True)
+        self.model.save_weights(file_path, overwrite=True)
         if val_loss < self.best_result:
             self.best_result = val_loss
             self.best_weights_path = file_path

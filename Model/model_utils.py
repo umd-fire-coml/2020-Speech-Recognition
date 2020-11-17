@@ -19,6 +19,7 @@ import importlib
 import callbacks
 importlib.reload(callbacks)
 from callbacks import ResultKeeper, CustomModelCheckpoint, CustomTensorBoard, CustomEarlyStopping
+import numpy as np
 
 def get_model(gpus):
     input_dim = 80
