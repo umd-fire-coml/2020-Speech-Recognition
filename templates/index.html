@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Graceify!</title>
+<title>Music to Text!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -31,12 +31,13 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">COML</a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide">MUSIC TO TEXT!</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#parse" class="w3-bar-item w3-button">PARSE</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -50,8 +51,8 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#parse" class="w3-bar-item w3-button">PARSE</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -60,15 +61,9 @@ body, html {
     <span class="w3-jumbo w3-hide-small">Transform your music into lyrics!</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
     <span class="w3-large">Produce lyrics for your own or others' music instantly!</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn about Graceify!</a></p>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn about our Project!</a></p>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
 </header>
 
@@ -79,29 +74,29 @@ body, html {
     <div class="w3-quarter">
         <i class="fa fa-desktop w3-margin-bottom w3-jumbo"></i>
         <p class="w3-large">Research</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        <p>Studying speech-to-text models and literature in the field</p>
       </div>
 
     <div class="w3-quarter">
       <i class="fa fa-table w3-margin-bottom w3-jumbo w3-center"></i>
       <p class="w3-large">Data Pre-Processing</p>
-      <p>Data Generator, Augmentation, Visualization, Input Pipeline</p>
+      <p>Generating data in batches, setting up parallelization to increase efficiency</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-cogs w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Training</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p class="w3-large">Model + Training</p>
+      <p>Making use of dataset to build a model that can recognize lyrics</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-signal w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Testing</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Testing model with sample songs and checking accuracy of lyrics in output.</p>
     </div>
   </div>
 </div>
 
 <!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id = "parse">
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Upload your audio file</h3>
@@ -133,45 +128,37 @@ body, html {
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="static/assets/images/audio_ml.png" alt="John" style="width:100%">
+        <img src="static/assets/images/526748aa09844816b682f54e7ddf1614.jpeg" alt="John" style="width:100%" height = "400">
         <div class="w3-container">
           <h3>Sagar Saxena</h3>
           <p class="w3-opacity">Developer</p>
-          <p> text</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="static/assets/images/audio_ml.png" alt="Jane" style="width:100%">
+        <img src="static/assets/images/12ec64317fda47f18980e40d2aed62fe.jpeg" alt="Jane" style="width:100%" height = "400">
         <div class="w3-container">
           <h3>Siddhesh Gupta</h3>
           <p class="w3-opacity">Developer</p>
-          <p> text</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="static/assets/images/audio_ml.png" alt="Mike" style="width:100%">
+        <img src="static/assets/images/7ef2afcde3614c368b8f6c1d024db285.jpeg" alt="Mike" style="width:100%" height = "400">
         <div class="w3-container">
           <h3>Priyanka Mehta</h3>
           <p class="w3-opacity">Developer</p>
-          <p> text </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="static/assets/images/audio_ml.png" alt="Dan" style="width:100%">
+        <img src="static/assets/images/rohan_linkedin.jpeg" alt="Dan" style="width:100%" height = "400">
         <div class="w3-container">
           <h3>Rohan Angajala</h3>
           <p class="w3-opacity">Developer</p>
-          <p> text </p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
     </div>
@@ -193,36 +180,10 @@ body, html {
 
 
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">If you have any questions or would like to take a look at our source code, please reach out to us!</p>
-  <div style="margin-top:48px">
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
-    </form>
-    <!-- Image of location/map -->
-  </div>
-</div>
-
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
 </footer>
  
