@@ -45,3 +45,9 @@ If there ever arises the need to have multiple data stores (in our case csv file
 ```bash
 python3 data_checker.py -d data_store_file [...and any other command line arguments you may need...]
 ``` 
+
+### Data Generator
+
+### Input Data Pipeline
+
+
