@@ -2,6 +2,7 @@
 
 * [Directory Guide](#directory-guide)
 * [Product Demo](#product-demonstration)
+* [Model Architecture](#model-architecture)
 * [How To Use The Data Checker](#how-to-use-the-data-checker)
   * [Adding a New Dataset](#adding-a-new-dataset)
   * [Updating a Existing Dataset](#updating-a-existing-dataset)
@@ -32,6 +33,11 @@ You can also run the following Google Colab notebook that walks through the proc
 
 [FIRE Research Summit 2020 Submission Notebook](https://colab.research.google.com/drive/1e-qTOuuntbBJlDb5v8JPLPOqTqZzYJ30?authuser=1#scrollTo=BbpzxVg0iUsH)
 
+## Model Architecture
+
+![Model Architecture](Model/l2s_model.png)
+
+This speech to text model consists of convolutional, time distributed dense, and bidirectional LSTM layers. Relu activations were used throughout the model and dropout was included to reduce overfitting.
 
 ## How To Use The Data Checker
 
