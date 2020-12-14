@@ -13,15 +13,22 @@
 
 ## Directory Guide
 
-| File                        | Description                                                                                                           |
-| -------------               | -------------                                                                                                         |
-| environment.yml             | Contains dependencies to create a new virtual environment from.                                                       |
-| environment_checker.py      | Installs necessary packages and checks that versions are up to date.                                                  |
-| data_checker.py             | Checks for dataset in directory and provides download options otherwise.                                              |
-| DataGenerator.py            | Generates data in batches for training given a path to training data, provides method to extract individual batches.  |
-| DataAugmentation.py         | Performs different types of augmentation on data, including injecting noise and changing speed.                       |
-| Data_Visualization.ipynb    | Provides visualizations of audio data using mel spectograms and tempo estimation, among other methods.                |
-| input_pipeline.ipynb        | Creates TF.data dataset from audio data and provides parallelizations for optimization.                               |
+| File                                                | Description                                                                                             |
+| -------------                                       | -------------                                                                                           |
+| [environment.yml](environment.yml)                  | Contains dependencies to create a new virtual environment from.                                         |
+| [environment_checker.py](environment_checker.py)    | Installs necessary packages and checks that versions are up to date.                                    |
+| [data_checker.py](data_checker.py)                  | Checks for dataset in directory and provides download options otherwise.                                |
+| [DataGenerator.py](DataGenerator.py)                | Generates data in batches for training given a path to training data, provides method to extract individual batches.  |
+| [DataAugmentation.py](DataAugmentation.py)          | Performs different types of augmentation on data, including injecting noise and changing speed.         |
+| [Data_Visualization.ipynb](Data_Visualization.ipynb)| Provides visualizations of audio data using mel spectograms and tempo estimation, among other methods.  |
+| [input_pipeline.ipynb](input_pipeline.ipynb)        | Creates TF.data dataset from audio data and provides parallelizations for optimization.                 |
+| [Test_Model.ipynb](Test_Model.ipynb)                | Tests a pre-trained model on given data                                                                 |
+| [Model/Model_ASR.ipynb](Model/Model_ASR.ipynb )     | Steps through the model architecture                                                                    |
+| [Model/Train_Model.ipynb](Model/Train_Model.ipynb)  | Trains a new model on the Common Voice and Amazing Grace datasets                                       |
+| [Model/alphabet.py](Model/alphabet.py)              | Encodes text labels using the alphabet.txt file                                                         |
+| [Model/alphabet.txt](Model/alphabet.txt)            | Contains all valid characters that can make up output text                                              |
+| [Model/callbacks.py](Model/callbacks.py)            | Consists of callbacks used to train the model                                                           |
+| [Model/model_utils.py](Model/model_utils.py)        | Compiles code from Model/Model_ASR.ipynb into a python file to use for training and testing             |
 
 ## Product Demonstration
 
