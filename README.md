@@ -22,7 +22,7 @@
 | Data_Visualization.ipynb    | Provides visualizations of audio data using mel spectograms and tempo estimation, among other methods.                |
 | input_pipeline.ipynb        | Creates TF.data dataset from audio data and provides parallelizations for optimization.                               |
 
-### Product Demonstration
+## Product Demonstration
 
 Feel free to take a look at the following video from our presentation at the FIRE Research Summit 2020:
 
