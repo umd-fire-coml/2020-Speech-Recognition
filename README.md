@@ -1,5 +1,13 @@
 # 2020-Speech-Recognition
 
+* [How To Use The Data Checker](#how-to-use-the-data-checker)
+  * [Adding a New Dataset](#adding-a-new-dataset)
+  * [Updating a Existing Dataset](#updating-a-existing-dataset)
+  * [Deleting an Existing Dataset](#deleting-an-existing-dataset)
+  * [Using a Different Data Store](#using-a-different-data-store)
+* [Training Models](#training-models)
+* [Testing Models](#testing-models)
+
 ## How To Use The Data Checker
 
 Using the Data Checker with the default dataset is very easy. Simply run,
@@ -45,3 +53,29 @@ If there ever arises the need to have multiple data stores (in our case csv file
 ```bash
 python3 data_checker.py -d data_store_file [...and any other command line arguments you may need...]
 ``` 
+
+## Training Models
+
+The [Train_Model](Model/Train_Model.ipynb) notebook details how to train our Speech To Text model. To run the notebook, make sure you have placed this repository in the "Research/FIRE/" folder on your Google Drive. There are two datasets that you can train on within this notebook: Common Voice and Amazing Grace. 
+
+If you try to download the Common Voice dataset on Google Colab, Google Colab will crash. To circumvent this issue we had placed the tfrecords of the train subset on Google Drive in the data directory. The cells on the training notebook will use use those tfrecords from the data directory. 
+
+If you would like to use the Amazing Grace dataset, follow the instructions [above](#how-to-use-the-data-checker) to obtain the Amazing Grace dataset. The training notebook uses the DataGenerator to generate data for training. You can modify the training parameters to fit the data to your choosing. 
+
+The results can be visualized using Tensorboard
+
+## Testing Models
+
+The [Test Model](Test_Model.ipynb) notebook details how to test our Speech To Text model. To run the notebook, make sure you have placed this repository in the "Research/FIRE/" folder on your Google Drive. You can select which pre-trained model you want to test by changing the argument for:
+
+```
+compiled_model.load_weights(your_pretrained_model_here)
+```
+
+Once you have chosen your pre-trained model, you can change the files array with a list of all the audio files you want use to test your model:
+
+```
+files = ["example.mp3"]
+```
+
+
