@@ -1,5 +1,41 @@
 # 2020-Speech-Recognition
 
+* [How To Use The Data Checker](#how-to-use-the-data-checker)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## How To Use The Data Checker
 
 Using the Data Checker with the default dataset is very easy. Simply run,
