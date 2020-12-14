@@ -1,40 +1,10 @@
 # 2020-Speech-Recognition
 
 * [How To Use The Data Checker](#how-to-use-the-data-checker)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  * [Adding a New Dataset](#adding-a-new-dataset)
+  * [Updating a Existing Dataset](#updating-a-existing-dataset)
+  * [Deleting an Existing Dataset](#deleting-an-existing-dataset)
+  * [Using a Different Data Store](#using-a-different-data-store)
 
 ## How To Use The Data Checker
 
