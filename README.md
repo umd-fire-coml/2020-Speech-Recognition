@@ -104,15 +104,16 @@ files = ["example.mp3"]
 ```
 
 ## Citations and Refrences
+
 A. Hannun, “Deep Speech 2: End-to-End Speech Recognition in English and Mandarin,” arXiv.org, 08-Dec-2015. [Online]. Available: https://arxiv.org/abs/1512.02595. [Accessed: 14-Dec-2020]. 
 A. Hannun, “Sequence Modeling with CTC,” Distill, 03-Jan-2020. [Online]. Available: https://distill.pub/2017/ctc/. [Accessed: 14-Dec-2020]. 
 
 “Common Voice by Mozilla,” Common Voice. [Online]. Available: https://commonvoice.mozilla.org/en/datasets. [Accessed: 14-Dec-2020].
-
-V. Panayotov, G. Chen, D. Povey and S. Khudanpur, "Librispeech: An ASR corpus based on public domain audio books," 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brisbane, QLD, 2015, pp. 5206-5210, doi: 10.1109/ICASSP.2015.7178964. Available: IEEE.org, https://ieeexplore.ieee.org/document/7178964. [Accessed: 14-Dec-2020].
 
 Facebookresearch, “facebookresearch/wav2letter,” GitHub, 21-Dec-2018. [Online]. Available: https://github.com/facebookresearch/wav2letter. [Accessed: 14-Dec-2020]. 
 
 J. Hui, “Speech Recognition - Deep Speech, CTC, Listen, Attend, and Spell,” Medium, 15-Oct-2019. [Online]. Available: https://jonathan-hui.medium.com/speech-recognition-deep-speech-ctc-listen-attend-and-spell-d05e940e9ed1. [Accessed: 14-Dec-2020]. 
 
 Smule, “DAMP-VP1k: Digital Archive of Mobile Performances - Smule Vocal Performances 100x10,” Zenodo, 07-Jan-2019. [Online]. Available: https://zenodo.org/record/2533419. [Accessed: 14-Dec-2020]. 
+
+V. Panayotov, G. Chen, D. Povey and S. Khudanpur, "Librispeech: An ASR corpus based on public domain audio books," 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Brisbane, QLD, 2015, pp. 5206-5210, doi: 10.1109/ICASSP.2015.7178964. Available: IEEE.org, https://ieeexplore.ieee.org/document/7178964. [Accessed: 14-Dec-2020].
