@@ -1,6 +1,16 @@
 # 2020-Speech-Recognition
 
-### Directory Guide
+* [Directory Guide](#directory-guide)
+* [Product Demo](#product-demonstration)
+* [How To Use The Data Checker](#how-to-use-the-data-checker)
+  * [Adding a New Dataset](#adding-a-new-dataset)
+  * [Updating a Existing Dataset](#updating-a-existing-dataset)
+  * [Deleting an Existing Dataset](#deleting-an-existing-dataset)
+  * [Using a Different Data Store](#using-a-different-data-store)
+* [Training New Models](#training-models)
+* [Testing New Models](#testing-models)
+
+## Directory Guide
 
 | File                        | Description                                                                                                           |
 | -------------               | -------------                                                                                                         |
@@ -12,27 +22,16 @@
 | Data_Visualization.ipynb    | Provides visualizations of audio data using mel spectograms and tempo estimation, among other methods.                |
 | input_pipeline.ipynb        | Creates TF.data dataset from audio data and provides parallelizations for optimization.                               |
 
-### Testing the Model
-
-You can run the following Google Colab notebook that walks through the process behind our model and provides the option to upload a file and test it out:
-
-https://colab.research.google.com/drive/1e-qTOuuntbBJlDb5v8JPLPOqTqZzYJ30?authuser=1#scrollTo=BbpzxVg0iUsH
-
 ### Product Demonstration
 
 Feel free to take a look at the following video from our presentation at the FIRE Research Summit 2020:
 
-https://www.youtube.com/watch?v=2-uc0R6Kx_o
+[![FIRE Research Summit 2020 Submission Video](https://img.youtube.com/vi/2-uc0R6Kx_o/0.jpg)](https://www.youtube.com/watch?v=2-uc0R6Kx_o)
 
+You can also run the following Google Colab notebook that walks through the process behind our model and provides the option to upload a file and test it out:
 
-=======
-* [How To Use The Data Checker](#how-to-use-the-data-checker)
-  * [Adding a New Dataset](#adding-a-new-dataset)
-  * [Updating a Existing Dataset](#updating-a-existing-dataset)
-  * [Deleting an Existing Dataset](#deleting-an-existing-dataset)
-  * [Using a Different Data Store](#using-a-different-data-store)
-* [Training Models](#training-models)
-* [Testing Models](#testing-models)
+[FIRE Research Summit 2020 Submission Notebook](https://colab.research.google.com/drive/1e-qTOuuntbBJlDb5v8JPLPOqTqZzYJ30?authuser=1#scrollTo=BbpzxVg0iUsH)
+
 
 ## How To Use The Data Checker
 
