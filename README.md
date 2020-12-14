@@ -127,8 +127,13 @@ files = ["example.mp3"]
 
 ## Citations and Refrences
 
+A. Amidi, “A detailed example of how to use data generators with Keras,” A detailed example of data generators with Keras. [Online]. Available: https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly. [Accessed: 14-Dec-2020]. 
+
 A. Hannun, “Deep Speech 2: End-to-End Speech Recognition in English and Mandarin,” arXiv.org, 08-Dec-2015. [Online]. Available: https://arxiv.org/abs/1512.02595. [Accessed: 14-Dec-2020]. 
-A. Hannun, “Sequence Modeling with CTC,” Distill, 03-Jan-2020. [Online]. Available: https://distill.pub/2017/ctc/. [Accessed: 14-Dec-2020]. 
+
+A. Hannun, “Sequence Modeling with CTC,” Distill, 03-Jan-2020. [Online]. Available: https://distill.pub/2017/ctc/. [Accessed: 14-Dec-2020].
+
+“Building a data pipeline,” CS230. [Online]. Available: https://cs230.stanford.edu/blog/datapipeline/. [Accessed: 14-Dec-2020]. 
 
 “Common Voice by Mozilla,” Common Voice. [Online]. Available: https://commonvoice.mozilla.org/en/datasets. [Accessed: 14-Dec-2020].
 
