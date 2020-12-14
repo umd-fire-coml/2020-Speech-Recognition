@@ -2,6 +2,7 @@
 
 * [Directory Guide](#directory-guide)
 * [Product Demo](#product-demonstration)
+* [How To Set Up Your Environment](#setting-up-your-environment)
 * [How To Use The Data Checker](#how-to-use-the-data-checker)
   * [Adding a New Dataset](#adding-a-new-dataset)
   * [Updating a Existing Dataset](#updating-a-existing-dataset)
@@ -32,6 +33,14 @@ You can also run the following Google Colab notebook that walks through the proc
 
 [FIRE Research Summit 2020 Submission Notebook](https://colab.research.google.com/drive/1e-qTOuuntbBJlDb5v8JPLPOqTqZzYJ30?authuser=1#scrollTo=BbpzxVg0iUsH)
 
+
+## Setting Up Your Environment
+
+If you are not using Google Colab, you will want to run the environment checker to install any necessary packages:
+
+```bash
+python3 environment_checker.py
+```
 
 ## How To Use The Data Checker
 
